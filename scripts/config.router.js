@@ -26,9 +26,9 @@ angular
         })
 
 
-      .state('app.dashboard', {
+      .state('app.home', {
         url: '/',
-        templateUrl: 'views/dashboard.html',
+        templateUrl: 'views/home.html',
         resolve: {
           deps: ['$ocLazyLoad', function ($ocLazyLoad) {
             return $ocLazyLoad.load([
@@ -56,12 +56,12 @@ angular
                                 'vendor/angular-flot/angular-flot.js'
                             ]
                         }]).then(function () {
-              return $ocLazyLoad.load('scripts/controllers/dashboard.js');
+              return $ocLazyLoad.load('scripts/controllers/home.js');
             });
                     }]
         },
         data: {
-          title: 'Dashboard',
+          title: 'Home',
         }
       })
 

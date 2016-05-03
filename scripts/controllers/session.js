@@ -6,7 +6,7 @@ function sessionCtrl($scope, $state) {
   };
 
   $scope.submit = function () {
-    $state.go('app.dashboard');
+    $state.go('app.home');
   };
 }
 
