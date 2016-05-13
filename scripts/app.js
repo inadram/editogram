@@ -19,6 +19,12 @@ angular
         'ui.utils',
         'ngTouch'
     ])
+    .constant('apiKey', null)
+    .constant('clientId', '329602615387-pgiles9j9h4hhh14s8697ub7umsiakqj.apps.googleusercontent.com')
+    .constant('scope', ['email', 'profile', 'https://www.googleapis.com/auth/drive'])
+    .constant('loadApis', {
+        'drive' : 'v2'
+    })
     .constant('COLORS', {
         'default': '#e2e2e2',
         primary: '#09c',

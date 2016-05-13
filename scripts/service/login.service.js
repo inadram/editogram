@@ -2,7 +2,7 @@
 /**
  * Service wrapper for gapi auth functions
  */
-angular.module('editogramApp.login').service('login', ['$q', 'googleApi', 'clientId', 'scope', function ($q, googleApi, clientId, scope) {
+angular.module('editogramApp').service('login.service', ['$q', 'googleApi', 'clientId', 'scope', function ($q, googleApi, clientId, scope) {
 
   /**
   * Check if the current token is valid (exists & not expired.)

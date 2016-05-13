@@ -13,13 +13,6 @@ angular
             FastClick.attach(document.body);
         },
     ])
-    .constant('apiKey', null)
-    .constant('clientId', '709207149709-fadikftqudacphtr4pq5mu80s6tqklrb.apps.googleusercontent.com')
-    .constant('applicationId', '709207149709')
-    .constant('scope', ['email', 'profile', 'https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.install'])
-    .constant('loadApis', {
-        'drive' : 'v2'
-    })
     .config(['$stateProvider', '$urlRouterProvider',
         function ($stateProvider, $urlRouterProvider) {
 
@@ -94,7 +87,18 @@ angular
                     templateUrl: 'views/extras-signin.html',
                     resolve: {
                         deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                            return $ocLazyLoad.load('scripts/controllers/session.js');
+                            return $ocLazyLoad.load([
+                                {
+                                    serie: true,
+                                    files: [
+                                        'https://apis.google.com/js/client.js?onload=checkAuth'
+                                    ]
+                                }]).then(function () {
+                                return $ocLazyLoad.load('scripts/controllers/session.js').then(function () {
+                                    return $ocLazyLoad.load('scripts/service/login.service.js');
+                                });
+                            });
+
                         }]
                     },
                     data: {
