@@ -30,35 +30,9 @@ angular
                     templateUrl: 'views/home.html',
                     resolve: {
                         deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                {
-                                    insertBefore: '#load_styles_before',
-                                    files: [
-                                        'styles/climacons-font.css',
-                                        'vendor/rickshaw/rickshaw.min.css'
-                                    ]
-                                },
-                                {
-                                    serie: true,
-                                    files: [
-                                        'vendor/d3/d3.min.js',
-                                        'vendor/rickshaw/rickshaw.min.js',
-                                        'vendor/flot/jquery.flot.js',
-                                        'vendor/flot/jquery.flot.resize.js',
-                                        'vendor/flot/jquery.flot.pie.js',
-                                        'vendor/flot/jquery.flot.categories.js',
-                                    ]
-                                },
-                                {
-                                    name: 'angular-flot',
-                                    files: [
-                                        'vendor/angular-flot/angular-flot.js'
-                                    ]
-                                }]).then(function () {
-                                return $ocLazyLoad.load('scripts/controllers/home.js');
-                            });
+                            return $ocLazyLoad.load('scripts/controllers/home.js');
                         }]
-                    },
+                    }   ,
                     data: {
                         title: 'Home',
                     }
@@ -76,7 +50,7 @@ angular
                     templateUrl: 'views/form-editors.html',
                     resolve: {
                         deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                                return $ocLazyLoad.load('scripts/controllers/editor.js');
+                            return $ocLazyLoad.load('scripts/controllers/editor.js');
                         }]
                     },
                     data: {
