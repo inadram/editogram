@@ -1,26 +1,10 @@
-
-/**
- * Service wrapper for gapi auth functions
- */
-angular.module('editogramApp').service('login.service', ['$q', 'googleApi', 'clientId', 'scope', function ($q, googleApi, clientId, scope) {
-
-  /**
-  * Check if the current token is valid (exists & not expired.)
-  *
-  * @return {Boolean} True if token still valid (not expired)
-  */
+angular.module('editogramApp').service('login.service', ['$q', 'clientId', 'scope', function ($q, clientId, scope) {
+    
   var isTokenValid = function() {
     var token = gapi.auth.getToken();
     return (token && Date.now() < token.expires_at);
   };
-
-  /**
-   * Builds a request object suitable for gapi.auth.authorize calls.
-   *
-   * @param {Boolean} immediateMode True if auth should be checked silently
-   * @param {String} user Optional login hint indiciating which account should be authorized
-   * @return {Promise} promise that resolves on completion of the login
-   */
+    
   var buildAuthRequest = function(immediateMode, user) {
     var request = {
       client_id: clientId,
@@ -33,49 +17,19 @@ angular.module('editogramApp').service('login.service', ['$q', 'googleApi', 'cli
     }
     return request;
   };
-
-  /**
-   * Attempt authorization.
-   *
-   * @param {Object} request Auth request
-   * @return {Promise} promise that resolves on completion
-   */
+    
   var executeRequest = function(request) {
-    return googleApi.then(function(gapi) {
-      if (isTokenValid()) {
-        return gapi.auth.getToken();
-      } else {
-        var deferred = $q.defer();
-        gapi.auth.authorize(request, function(result) {
-          if (result && !result.error) {
-            deferred.resolve(result);
-          } else {
-            var error = result ? result.error : 'Unknown authentication error';
-            deferred.reject(error);
-          }
-        });
-        return deferred.promise;
-      }
-    });
+      gapi.auth.authorize(request, function (result) {
+           alert(JSON.stringify(result));
+      });
+      return false;
   };
-
-  /**
-   * Prompt user for login/authorization
-   *
-   * @param {String} user Optional login hint indiciating which account should be authorized
-   * @return {Promise} promise that resolves on completion of the login
-   */
+    
   this.login = function (user) {
     var request = buildAuthRequest(false, user);
     return executeRequest(request);
   };
-
-  /**
-   * Silently check to see if a user has already authorized the app.
-   *
-   * @param {String} user Optional login hint indiciating which account should be authorized
-   * @return {Promise} promise that resolves on completion of the check
-   */
+    
   this.checkAuth = function(user) {
     var request = buildAuthRequest(true, user);
     return executeRequest(request);
