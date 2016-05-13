@@ -3,12 +3,10 @@
 angular
     .module('editogramApp', [
         'ui.router',
-        'ngAnimate',
         'ui.bootstrap',
         'oc.lazyLoad',
         'ngStorage',
         'ngSanitize',
-        'ui.utils',
         'ngTouch'
     ])
     .constant('apiKey', null)
