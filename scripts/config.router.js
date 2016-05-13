@@ -74,6 +74,11 @@ angular
                 .state('app.ui.new', {
                     url: '/new-document',
                     templateUrl: 'views/form-editors.html',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                                return $ocLazyLoad.load('scripts/controllers/editor.js');
+                        }]
+                    },
                     data: {
                         title: 'new Document',
                     }
