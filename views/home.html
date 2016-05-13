@@ -1,16 +1,18 @@
-<div data-ng-controller="homeCtrl">
-    <div class="row" >
+<div data-ng-controller="homeController">
+    <div class="row">
         <div class="col-sm-2">
-            <div class="widget bg-white no-padding">
-                <div class="h3 mb0 block text-center pb30">
-                    <i class="icon-file-add fa-5x"></i>
-                </div>
-                <div class="widget bg-blue mb0 text-center no-radius">
-                    <div class="widget-details">
-                        <div class="bold text-uppercase h4"> New</div>
+            <a ui-sref="app.ui.new">
+                <div class="widget bg-white no-padding">
+                    <div class="h3 mb0 block text-center pb30">
+                        <i class="icon-file-add fa-5x"></i>
+                    </div>
+                    <div class="widget bg-blue mb0 text-center no-radius">
+                        <div class="widget-details">
+                            <div class="bold text-uppercase h4"> New</div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>

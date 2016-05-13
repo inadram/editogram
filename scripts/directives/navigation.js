@@ -128,4 +128,4 @@ function sideNavigation() {
   };
 }
 
-angular.module('urbanApp').directive('sideNavigation', sideNavigation);
+angular.module('editogramApp').directive('sideNavigation', sideNavigation);

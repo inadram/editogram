@@ -2087,7 +2087,7 @@ footer.content-footer li a:active {
   top: 0;
 }
 .layout-fixed-header .main-content {
-  padding-top: 75px;
+  padding-top: 15px;
 }
 .layout-fixed-header .main-content.no-padding {
   padding-top: 55px;

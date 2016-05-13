@@ -19,4 +19,4 @@ function panelControlRemove() {
   };
 }
 
-angular.module('urbanApp').directive('panelControlRemove', panelControlRemove);
+angular.module('editogramApp').directive('panelControlRemove', panelControlRemove);

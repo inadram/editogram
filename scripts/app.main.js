@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('urbanApp')
+  .module('editogramApp')
   .controller('AppCtrl', ['$scope', '$http', '$localStorage',
         function AppCtrl($scope, $http, $localStorage) {
 

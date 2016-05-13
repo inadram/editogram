@@ -16,4 +16,4 @@ function scrollUp() {
   };
 }
 
-angular.module('urbanApp').directive('scrollUp', scrollUp);
+angular.module('editogramApp').directive('scrollUp', scrollUp);

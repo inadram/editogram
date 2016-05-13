@@ -9,7 +9,6 @@ function sessionCtrl($scope, $state) {
     $state.go('app.home');
   };
 }
-
 angular
-  .module('urbanApp')
+  .module('editogramApp')
   .controller('sessionCtrl', ['$scope', '$state', sessionCtrl]);

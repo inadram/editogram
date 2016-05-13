@@ -24,4 +24,4 @@ function preloader($rootScope, $timeout) {
   };
 }
 
-angular.module('urbanApp').directive('preloader', preloader);
+angular.module('editogramApp').directive('preloader', preloader);
