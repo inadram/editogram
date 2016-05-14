@@ -1,12 +1,6 @@
 'use strict';
 
-function editorController($scope) {
-   $scope.opt1 = {
-    toolbar: {
-      fa: true
-    }
-  };
-}
+function editorController($scope) {}
 
 angular
   .module('editogramApp')

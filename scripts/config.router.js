@@ -26,7 +26,7 @@ angular
                     templateUrl: 'views/common/layout.html',
                 })
                 .state('editogram.documents', {
-                    url: '/',
+                    url: '/documents',
                     templateUrl: 'views/documents.html',
                     resolve: {
                         deps: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -54,8 +54,8 @@ angular
                 .state('editogramHome', {
                     templateUrl: 'views/common/home.html',
                 })
-                .state('editogramHome.signin', {
-                    url: '/signin',
+                .state('editogramHome.home', {
+                    url: '/',
                     templateUrl: 'views/home.html',
                     resolve: {
                         deps: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -67,7 +67,7 @@ angular
                                     ]
                                 }]).then(function () {
                                 return $ocLazyLoad.load('scripts/controllers/home.js').then(function () {
-                                    return $ocLazyLoad.load('scripts/service/login.service.js');
+                                    return $ocLazyLoad.load('scripts/service/googleLogin.js');
                                 });
                             });
 

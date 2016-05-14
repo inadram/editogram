@@ -1,4 +1,4 @@
-angular.module('editogramApp').service('login.service', ['$q', 'clientId', 'scope', function ($q, clientId, scope) {
+angular.module('editogramApp').service('googleLogin', ['$q', 'clientId', 'scope', function ($q, clientId, scope) {
     
   var isTokenValid = function() {
     var token = gapi.auth.getToken();

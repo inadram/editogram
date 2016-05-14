@@ -1,16 +1,16 @@
 'use strict';
 
-function homeController($scope, $state, loginService) {
+function homeController($scope, $state, googleLogin) {
     $scope.signin = function () {
-        $state.go('user.signin');
+        $state.go('editogramHome');
     };
 
     $scope.submit = function () {
-        loginService.login().then(function () {
-            $state.go('app.home');
+        googleLogin.login().then(function () {
+            $state.go('editogram.documents');
         })
     };
 }
 angular
     .module('editogramApp')
-    .controller('homeController', ['$scope', '$state', 'login.service', homeController]);
+    .controller('homeController', ['$scope', '$state', 'googleLogin', homeController]);
