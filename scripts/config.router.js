@@ -21,11 +21,11 @@ angular
 
             // Application routes
             $stateProvider
-                .state('app', {
+                .state('editogram', {
                     abstract: true,
                     templateUrl: 'views/common/layout.html',
                 })
-                .state('app.home', {
+                .state('editogram.documents', {
                     url: '/',
                     templateUrl: 'views/documents.html',
                     resolve: {
@@ -34,18 +34,11 @@ angular
                         }]
                     }   ,
                     data: {
-                        title: 'Home',
+                        title: 'Documents',
                     }
                 })
 
-
-                // UI Routes
-                .state('app.ui', {
-                    template: '<div ui-view></div>',
-                    abstract: true,
-                    url: '/ui',
-                })
-                .state('app.ui.new', {
+                .state('editogram.editor', {
                     url: '/editor',
                     templateUrl: 'views/editor.html',
                     resolve: {
@@ -58,10 +51,10 @@ angular
                     }
                 })
 
-                .state('user', {
+                .state('editogramHome', {
                     templateUrl: 'views/common/home.html',
                 })
-                .state('user.signin', {
+                .state('editogramHome.signin', {
                     url: '/signin',
                     templateUrl: 'views/home.html',
                     resolve: {
