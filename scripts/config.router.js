@@ -27,10 +27,10 @@ angular
                 })
                 .state('app.home', {
                     url: '/',
-                    templateUrl: 'views/home.html',
+                    templateUrl: 'views/documents.html',
                     resolve: {
                         deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                            return $ocLazyLoad.load('scripts/controllers/home.js');
+                            return $ocLazyLoad.load('scripts/controllers/documents.js');
                         }]
                     }   ,
                     data: {
@@ -46,8 +46,8 @@ angular
                     url: '/ui',
                 })
                 .state('app.ui.new', {
-                    url: '/new-document',
-                    templateUrl: 'views/form-editors.html',
+                    url: '/editor',
+                    templateUrl: 'views/editor.html',
                     resolve: {
                         deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load('scripts/controllers/editor.js');
@@ -59,11 +59,11 @@ angular
                 })
 
                 .state('user', {
-                    templateUrl: 'views/common/session.html',
+                    templateUrl: 'views/common/home.html',
                 })
                 .state('user.signin', {
                     url: '/signin',
-                    templateUrl: 'views/extras-signin.html',
+                    templateUrl: 'views/home.html',
                     resolve: {
                         deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
@@ -73,7 +73,7 @@ angular
                                         'https://apis.google.com/js/client.js?onload=checkAuth'
                                     ]
                                 }]).then(function () {
-                                return $ocLazyLoad.load('scripts/controllers/session.js').then(function () {
+                                return $ocLazyLoad.load('scripts/controllers/home.js').then(function () {
                                     return $ocLazyLoad.load('scripts/service/login.service.js');
                                 });
                             });

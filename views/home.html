@@ -1,18 +1,16 @@
-<div data-ng-controller="homeController">
-    <div class="row">
-        <div class="col-sm-2">
-            <a ui-sref="app.ui.new">
-                <div class="widget bg-white no-padding">
-                    <div class="h3 mb0 block text-center pb30">
-                        <i class="icon-file-add fa-5x"></i>
-                    </div>
-                    <div class="widget bg-blue mb0 text-center no-radius">
-                        <div class="widget-details">
-                            <div class="bold text-uppercase h4"> New</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
+<div class="center-wrapper" data-ng-controller="homeController">
+  <div class="center-content">
+    <div class="row no-margin">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <form role="form" class="form-layout">
+
+          <button class="btn btn-success btn-block btn-lg mb15" type="submit" data-ng-click="submit()">
+            <span>Sign in</span>
+          </button>
+
+        </form>
+      </div>
     </div>
+
+  </div>
 </div>
