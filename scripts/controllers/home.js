@@ -6,9 +6,11 @@ function homeController($scope, $state, googleLogin) {
     };
 
     $scope.submit = function () {
-        googleLogin.login().then(function () {
+        googleLogin.login().then(function (response) {
+            googleLogin.createDocument();
             $state.go('editogram.documents');
-        })
+        });
+
     };
 }
 angular
