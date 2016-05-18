@@ -1,7 +1,11 @@
 'use strict';
 
-function documentsController($scope) {}
+function documentsController(googleDocument, $scope) {
+    googleDocument.create().then(function (response) {
+        console.log(response);
+    })
+}
 
 angular
-  .module('editogramApp')
-  .controller('documentsController', ['$scope', documentsController]);
+    .module('editogramApp')
+    .controller('documentsController', ['googleDocument','$scope', documentsController]);

@@ -30,11 +30,17 @@ angular
                     templateUrl: 'views/documents.html',
                     resolve: {
                         deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                            return $ocLazyLoad.load('scripts/controllers/documents.js');
+                            return $ocLazyLoad.load([
+                                {
+                                    serie: true,
+                                    files: [
+                                        'https://apis.google.com/js/client.js?onload=checkAuth',
+                                        'scripts/service/googleDocument.js'
+                                    ]
+                                }]).then(function () {
+                                return $ocLazyLoad.load('scripts/controllers/documents.js')
+                            });
                         }]
-                    }   ,
-                    data: {
-                        title: 'Documents',
                     }
                 })
 
@@ -45,9 +51,6 @@ angular
                         deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                             return $ocLazyLoad.load('scripts/controllers/editor.js');
                         }]
-                    },
-                    data: {
-                        title: 'new Document',
                     }
                 })
 
