@@ -1,17 +1,15 @@
 'use strict';
 
 function homeController($scope, $state, googleLogin) {
-    $scope.signin = function () {
+    $scope.home = function () {
         $state.go('editogramHome');
     };
 
-    $scope.submit = function () {
-        googleLogin.login().then(function (response) {
-            googleLogin.createDocument();
+    $scope.login = function () {
+        googleLogin.login().then(function () {
             $state.go('editogram.documents');
-        });
-
-    };
+        })
+    }
 }
 angular
     .module('editogramApp')
