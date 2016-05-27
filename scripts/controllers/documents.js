@@ -1,8 +1,8 @@
 'use strict';
 
 function documentsController(googleDocument, $scope) {
-    googleDocument.create().then(function (response) {
-        console.log(response);
+    googleDocument.getAll().then(function (response) {
+        $scope.documents =response.response.result;
     })
 }
 
