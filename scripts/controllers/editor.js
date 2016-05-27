@@ -1,15 +1,7 @@
 'use strict';
 
-function editorCtrl($scope) {
-  $scope.text = 'Hello World';
-
-  $scope.opt1 = {
-    toolbar: {
-      fa: true
-    }
-  };
-}
+function editorController($scope) {}
 
 angular
-  .module('urbanApp')
-  .controller('editorCtrl', ['$scope', editorCtrl]);
+  .module('editogramApp')
+  .controller('editorController', ['$scope', editorController]);
