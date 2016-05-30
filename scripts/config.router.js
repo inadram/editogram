@@ -47,6 +47,7 @@ angular
 
                 .state('editogram.editor', {
                     url: '/editor',
+                    params:{id:'default'},
                     templateUrl: 'views/editor.html',
                     resolve: {
                         deps: ['$ocLazyLoad', function ($ocLazyLoad) {

@@ -15,7 +15,7 @@
             </a>
         </div>
         <div class="col-sm-2" ng-repeat="document in documents">
-            <a ui-sref="editogram.editor" >
+            <a ui-sref="editogram.editor({id:'{{document.id}}'})" >
                 <div class="widget bg-white no-padding">
                     <div class="widget bg-white mb0 text-center no-radius" style="height: 160px">
                         <div class="widget-details">
