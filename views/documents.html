@@ -1,10 +1,15 @@
 <div data-ng-controller="documentsController">
-    <div class="row" >
-        <div class="col-sm-2">
+    <div class="row">
+        <div class="col-lg-12"><input type="text" placeholder="search" ng-model="search"
+                                      class="form-control mb15 input-lg"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 p20">
             <a ui-sref="app.ui.new">
-                <div class="widget bg-white no-padding" style="height: 150px">
-                    <div class="h3 mb0 block text-center pb30">
-                        <i class="icon-file-add fa-4x"></i>
+                <div class="widget bg-white no-padding">
+                    <div class="h4 text-center p30">
+                        <i class="icon-file-add fa-3x"></i>
+
                     </div>
                     <div class="widget bg-blue mb0 text-center no-radius">
                         <div class="widget-details">
@@ -14,21 +19,28 @@
                 </div>
             </a>
         </div>
-        <div class="col-sm-2" ng-repeat="document in documents">
-            <a ui-sref="editogram.editor({id:'{{document.id}}'})" >
+        <div class="col-sm-2 p20" ng-repeat="document in documents | filter:search">
+            <a ui-sref="editogram.editor({id:'{{document.id}}'})">
                 <div class="widget bg-white no-padding">
-                    <div class="widget bg-white mb0 text-center no-radius" style="height: 160px">
+                    <div class="widget bg-white mb0" style="height: 146px">
                         <div class="widget-details">
+                            <div class="bold">{{document.name | uppercase}}</div>
                             <div class="small">{{document.description}}</div>
                         </div>
                     </div>
-                    <div class="widget bg-green mb0 text-center no-radius">
+                    <div class="widget bg-default-light mb0">
                         <div class="widget-details row">
-                            <i class="fa fa-pencil-square-o fa-2x col-md-3"></i><div class="bold text-uppercase col-md-9 mt5">{{document.name}}...</div>
+                            <div class="col-sm-6"><i class="fa fa-remove text-danger fa-2x"></i></div>
+                            <div class="col-sm-6 text-right"><i class="fa fa-pencil-square-o text-green fa-2x"></i></div>
                         </div>
                     </div>
                 </div>
             </a>
         </div>
+
     </div>
+    <button type="button" class="btn btn-round btn-default btn-lg btn-icon mr5" data-ng-click="loadMore()">
+        <i class="fa fa-refresh"></i> <span> Load More </span>
+    </button>
+
 </div>

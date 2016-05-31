@@ -1,9 +1,19 @@
 'use strict';
 
 function documentsController(googleDocument, $scope) {
-    googleDocument.getAll().then(function (response) {
-        $scope.documents =response.response.result;
-    })
+
+    getAllDocuments();
+
+    function getAllDocuments(continuationToken) {
+        googleDocument.getAll(continuationToken).then(function (response) {
+            $scope.documents = response.response.result;
+        });
+    }
+
+
+    $scope.loadMore = function (continuationToken) {
+      $scope.push(getAllDocuments(continuationToken))
+    }
 }
 
 angular
