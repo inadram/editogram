@@ -35,6 +35,7 @@ angular
                                     serie: true,
                                     files: [
                                         'scripts/directives/preloader.js',
+                                        'scripts/directives/newFile.js',
                                         'https://apis.google.com/js/client.js?onload=checkAuth',
                                         'scripts/service/googleDocument.js'
                                     ]

@@ -4,21 +4,7 @@
                                       class="form-control mb15 input-lg"></div>
     </div>
     <div class="row">
-        <div class="col-sm-2 p20">
-            <a ui-sref="app.ui.new">
-                <div class="widget bg-white no-padding">
-                    <div class="h4 text-center p30">
-                        <i class="icon-file-add fa-3x"></i>
-
-                    </div>
-                    <div class="widget bg-blue mb0 text-center no-radius">
-                        <div class="widget-details">
-                            <div class="bold text-uppercase h4"> New</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
+        <new-file></new-file>
         <div class="col-sm-2 p20" ng-repeat="document in documents | filter:search">
             <a ui-sref="editogram.editor({id:'{{document.id}}'})">
                 <div class="widget bg-white no-padding">
@@ -31,7 +17,8 @@
                     <div class="widget bg-default-light mb0">
                         <div class="widget-details row">
                             <div class="col-sm-6"><i class="fa fa-remove text-danger fa-2x"></i></div>
-                            <div class="col-sm-6 text-right"><i class="fa fa-pencil-square-o text-green fa-2x"></i></div>
+                            <div class="col-sm-6 text-right"><i class="fa fa-pencil-square-o text-green fa-2x"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
