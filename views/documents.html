@@ -5,26 +5,7 @@
     </div>
     <div class="row">
         <new-file></new-file>
-        <div class="col-sm-2 p20" ng-repeat="document in documents | filter:search">
-            <a ui-sref="editogram.editor({id:'{{document.id}}'})">
-                <div class="widget bg-white no-padding">
-                    <div class="widget bg-white mb0" style="height: 146px">
-                        <div class="widget-details">
-                            <div class="bold">{{document.name | uppercase}}</div>
-                            <div class="small">{{document.description}}</div>
-                        </div>
-                    </div>
-                    <div class="widget bg-default-light mb0">
-                        <div class="widget-details row">
-                            <div class="col-sm-6"><i class="fa fa-remove text-danger fa-2x"></i></div>
-                            <div class="col-sm-6 text-right"><i class="fa fa-pencil-square-o text-green fa-2x"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
+        <document ng-repeat="documentFile in documents | filter:search"></document>
     </div>
     <button type="button" class="btn btn-round btn-default btn-lg btn-icon mr5" data-ng-click="loadMore()">
         <i class="fa fa-refresh"></i> <span> Load More </span>

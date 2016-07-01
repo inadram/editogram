@@ -5,7 +5,7 @@ function homeController($scope, $state, googleLogin) {
         $state.go('editogramHome');
     };
 
-    $scope.login = function () {
+    this.login = function () {
         googleLogin.login().then(function () {
             $state.go('editogram.documents');
         })

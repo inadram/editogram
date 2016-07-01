@@ -11,7 +11,7 @@ angular
                 window.scrollTo(0, 0);
             });
             FastClick.attach(document.body);
-        },
+        }
     ])
     .config(['$stateProvider', '$urlRouterProvider',
         function ($stateProvider, $urlRouterProvider) {
@@ -23,7 +23,7 @@ angular
             $stateProvider
                 .state('editogram', {
                     abstract: true,
-                    templateUrl: 'views/common/layout.html',
+                    templateUrl: 'views/common/layout.html'
                 })
                 .state('editogram.documents', {
                     url: '/documents',
@@ -36,6 +36,7 @@ angular
                                     files: [
                                         'scripts/directives/preloader.js',
                                         'scripts/directives/newFile.js',
+                                        'scripts/directives/document.js',
                                         'https://apis.google.com/js/client.js?onload=checkAuth',
                                         'scripts/service/googleDocument.js'
                                     ]

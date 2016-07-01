@@ -1,10 +1,9 @@
-<div class="center-wrapper" data-ng-controller="homeController">
+<div class="center-wrapper" data-ng-app="editogramApp" data-ng-controller="homeController as homeC">
   <div class="center-content">
     <div class="row no-margin">
       <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
         <form role="form" class="form-layout">
-
-          <button class="btn btn-success btn-block btn-lg mb15" type="submit" data-ng-click="login()">
+          <button class="btn btn-success btn-block btn-lg mb15" type="submit" data-ng-click="homeC.login()">
             <span>Sign in</span>
           </button>
 

@@ -1,0 +1,19 @@
+<div class="col-sm-2 p20">
+    <a ui-sref="editogram.editor({id:'{{document.id}}'})">
+        <div class="widget bg-white no-padding">
+            <div class="widget bg-white mb0" style="height: 146px">
+                <div class="widget-details">
+                    <div class="bold">{{document.name | uppercase}}</div>
+                    <div class="small">{{document.description}}</div>
+                </div>
+            </div>
+            <div class="widget bg-default-light mb0">
+                <div class="widget-details row">
+                    <div class="col-sm-6"><i class="fa fa-remove text-danger fa-2x"></i></div>
+                    <div class="col-sm-6 text-right"><i class="fa fa-pencil-square-o text-green fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
